@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="view-port" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Keywords related to your website">
+    <title>MoonAlpha Analytic</title>
+
+   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='chat/style.css') }}">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <style>
+      #chatbot {
+        height: 200px; /* set a fixed height for the div */
+        overflow-y: scroll; /* set the vertical scrollbar */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ask Telkom !</h1>
+    <div class="container border">
+      <div id="chatbot">
+        <p class="botText"><span>Hi There</span></p>
+      </div>
+      <div id="userInput">
+        <input type="text" id="textInput" name="userMessage" placeholder="type Your message..." />
+        <input type="submit" value="send" id="buttonInput" />
+        <button id="microphoneButton">Start microphone</button>
+      </div> 
+    </div>
+
+    <script>
+      $('#textInput').on('keydown', function(event) {
+  if (event.keyCode === 13) { // Check if the key pressed is the enter key (keyCode 13)
+    event.preventDefault(); // Prevent the default behavior of the enter key (submitting the form)
+    $('#buttonInput').click(); // Trigger the click event on the "send" button
+  }
+});
+      $('#buttonInput').click(function() {
+    var userText = $('#textInput').val();
+    var userHTML = "<p class='userText'>User: <span>" + userText + "</span></p>";
+    $('#textInput').val("");
+    $('#chatbot').append(userHTML);
+
+    // Make a POST request to Flask server for getting a response
+    $.post('/get_response', { userMessage: userText }).done(function(data) {
+      var returnedMessage = "<p class='botText'>Chatbot: <span>" + data + "</span></p>";
+      $('#chatbot').append(returnedMessage);
+  // Automatically scroll to the last conversation line
+   $('#chatbot').scrollTop($('#chatbot').height());
+    });
+  });
+
+
+
+
+  // Initialize the SpeechRecognition object
+const recognition = new webkitSpeechRecognition();
+
+// Set the configuration options for the SpeechRecognition object
+recognition.continuous = true;
+recognition.interimResults = false;
+
+// Add a variable to keep track of the timeout
+let timeout;
+
+// Add an event listener for the "result" event, which is triggered when speech is recognized
+recognition.addEventListener('result', (event) => {
+  const transcript = event.results[event.results.length - 1][0].transcript;
+  $('#textInput').val(transcript);
+
+  // Reset the timeout when speech is recognized
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    recognition.stop();
+  }, 3000); // Timeout after 3 seconds of no speech
+});
+
+// Add an event listener for the "end" event, which is triggered when speech recognition ends
+recognition.addEventListener('end', () => {
+  const transcript = $('#textInput').val();
+  sendUserMessage(transcript);
+
+  // Clear the input field
+  $('#textInput').val("");
+
+  // Restart the speech recognition
+  recognition.start();
+});
+
+// Add an event listener for the click event on the "send" button
+$('#buttonInput').click(function() {
+  const userText = $('#textInput').val();
+  sendUserMessage(userText);
+
+  // Clear the input field
+  $('#textInput').val("");
+});
+
+// Function to send the user message to the server and display the response
+function sendUserMessage(userText) {
+  const userHTML = "<p class='userText'>User: <span>" + userText + "</span></p>";
+  $('#chatbot').append(userHTML);
+
+  // Make a POST request to Flask server for getting a response
+  $.post('/get_response', { userMessage: userText }).done(function(data) {
+    const returnedMessage = "<p class='botText'>Chatbot: <span>" + data + "</span></p>";
+    $('#chatbot').append(returnedMessage);
+
+    // Automatically scroll to the last conversation line
+    $('#chatbot').scrollTop($('#chatbot').height());
+  });
+}
+
+// Add an event listener for the click event on the "Start microphone" button
+$('#microphoneButton').click(function() {
+  recognition.start();
+
+  // Set the timeout to end the speech recognition after 3 seconds of no speech
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    recognition.stop();
+  }, 3000); // Timeout after 3 seconds of no speech
+});
+
+
+    </script>
+  </body>
+</html>

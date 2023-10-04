@@ -1,0 +1,254 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-), as questions and get Telkom Help",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, you need Telkom help?",
+        "Hello! I'm here to offer Telkom Help. Feel free to ask me any questions you have, and I'll do my best to assist you with the information and support you need.",
+        "Greetings! I'm an AI-powered Telkom Help assistant at your service. Feel free to ask me anything you need assistance with, and I'll provide you with accurate information and support to address your queries.",
+        "Hey there! I'm here as your reliable Telkom Help buddy. Don't hesitate to throw any questions my way, and I'll do my best to help you out with all the information and support you require.",
+        "Welcome! I am an AI assistant dedicated to providing you with Telkom Help. Please feel free to ask me any questions you may have, and I will ensure that you receive the necessary information and support in a prompt and efficient manner.",
+        "Hello! I'm here solely to assist you with Telkom Help. You can count on me to answer your questions and provide the support you need. Feel free to ask away, and I'll be your reliable guide throughout the process."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "PC Backup",
+      "patterns": [
+        "Can I backup multiple versions of a file on PC Backup?",
+        "can I actually backup multiple versions of a file on PC Backup?",
+        " is it even possible to backup multiple versions of a file on PC Backup?",
+        "I wonder if I can backup multiple versions of a file on PC Backup."
+      ],
+      "responses": [
+        "PC Backup has up to 30 different versions available to save your data",
+        "Absolutely! PC Backup offers an incredible feature where you can backup not just one, but multiple versions of your files. It's truly amazing",
+        "PC Backup offers a generous selection of up to 30 different versions to choose from when saving your data.",
+        " PC Backup provides ample support with up to 30 different versions to securely store and protect your valuable data.",
+        "With PC Backup,you can enjoy the advantage of having access to 30 different versions to safeguard and manage your important files."
+      ]
+    },
+    {
+      "tag": "Hosting facility",
+      "patterns": [
+        "What are the type and size of racks that are available for lease in the Business Basic Hosting ?",
+        "I'm really curious to know about the variety and size of racks that the Business Basic Hosting offers for lease. Can you share the details?",
+        "I'm worried about finding the right type and size of racks for lease in the Business Basic Hosting. Can you provide information about the available options?",
+        "Could you please provide details about the type and size of racks that are available for lease in the Business Basic Hosting? I would like to explore my options."
+      ],
+      "responses": [
+        "Our facilities consist of APC racks which have space for 42 rack-unit devices that are the industry standard and 19 inches wide",
+        "In our facilities, we utilize APC racks that are specifically designed to accommodate 42 rack-unit devices. These racks adhere to the industry standard and have a width of 19 inches.",
+        "When it comes to our facilities, we rely on APC racks known for their efficiency. With a capacity for 42 rack-unit devices and a width of 19 inches, these racks are designed to meet the industry standard."
+      ]
+    },
+    {
+      "tag": "Data To a drive",
+      "patterns": [
+        "Why should I choose PC Backup if I already save my data to a drive?",
+        "I'm curious to know what advantages PC Backup offers over simply saving data to a drive. Can you explain why I should choose PC Backup?",
+        "What advantages does PC Backup offer over simply saving data to a drive that would make it a preferable choice?",
+        "Are there any specific benefits or features that make PC Backup a worthwhile option, even if I already have a drive to save my data?"
+      ],
+      "responses": [
+        "One of the most basic rules when using a computer is routinely backing up your files",
+        "PC Backup eliminates the hassle of backing up because there are no additional hardware components, disks or tapes",
+        "You have the added security of having your files backed up off-site to our secure facility",
+        "By choosing our service, you can enjoy the peace of mind that comes with knowing your files are securely backed up off-site in our state-of-the-art facility.",
+        "One of the key advantages of our service is the enhanced safety it offers. Your files are backed up off-site to our secure facility, ensuring their protection even in the event of local storage failures or disasters."
+
+        
+      ]
+    },
+    {
+      "tag": "park my car",
+      "patterns": [
+        "When on site at the Basic Business Hosting facility, where am I allowed to park my car?",
+        "",
+        ""
+      ],
+      "responses": [
+        "Visitor parking is available within the Telkom yard",
+
+       
+        ""
+      ]
+    },
+    {
+      "tag":"Telkom offer",
+      "patterns":[
+        "What Unified Communications solutions does Telkom offer?",
+        ""
+      ],
+      "responses":[
+        "We offer a full range of Unified Communications (UC) solutions including IP telephony services; teleconferencing; Unified Messaging; Telepresence; hosted IP contact centres and remote connectivity through Telkom Mobility",
+        ""
+
+        
+
+      ]
+    },
+    {
+      "tag":"Telkom offer businesses",
+      "patterns":[
+        "What IT services does Telkom offer businesses?",
+        ""
+      ],
+      "responses":[
+        "Think of us as your business CIO. We offer all the IT services needed to get a business off the ground and sustain its IT infrastructure",
+        "These include:Backup and recovery,Hosting and domain services,LAN & WAN,Managed Servers,Remote Access,Security Service and Storage"
+
+        
+      ]
+    },
+    {
+      "tag":"SyncVault",
+      "patterns":[
+        "What is SyncVault?",
+        ""
+      ],
+      "responses":[
+        "SyncVault is your personal storage space in the cloud. It doesn't only store your documents but boasts other helpful features such as file sharing and sync, backup and mobile collaboration"
+        
+      ]
+    },
+    {
+      "tag":"PC Backup",
+      "patterns":[
+        "What is de-duplication and is it supported on PC Backup?",
+        ""
+      ],
+      "responses":[
+        "De-duplication essentially refers to the elimination of redundant data. In the de-duplication process, duplicate data is deleted, leaving only one copy of the data to be stored.However, indexing of all data is still retained should that data ever be required. De-duplication is able to reduce the required storage capacity since only the unique data is stored",
+        ""
+        
+      ]
+    },
+    {
+      "tag":" Business Hosting facility",
+      "patterns":[
+        "May I bring my own racks into the Basic Business Hosting facility?",
+        ""
+      ],
+      "responses":[
+        "No."
+        
+      ]
+    },
+    {
+      "tag":"non-voice services from Telkom",
+      "patterns":[
+        "Can I get a cost estimate for non-voice services from Telkom?",
+        ""
+      ],
+      "responses":[
+        "Yes, just visit :https://apps.telkom.co.za/calculator/displayCurrentTariffCalculator.htm Its our Tariff Calculator.",
+        "Our calculator will give you a cost estimate to help you budget. However, if you want a formal quote, you will need to get in touch with us"
+        
+      ]
+    },
+    {
+      "tag":"over the internet",
+      "patterns":[
+        "I have a large amount of data to be moved initially on to PC backup; will it have to go over the internet?",
+        ""
+      ],
+      "responses":[
+        "Yes, an initial backup will be done over the internet",
+        "Yes, an initial backup will be done over the internet.Whenever you want to make changes to who has permission to access your rack, you need to complete a Change Request form This is critical for security reasons"
+        
+      ]
+    },
+    {
+      "tag":"team for assistance",
+      "patterns":[
+        "How can I contact the 'Data Centre Basic Hosting' support team for assistance?",
+        ""
+      ],
+      "responses":[
+        "There is 24-hour access to our service desk should you want to log a fault log. You can also request remote-hand assistance as part of our support package",
+        "There is 24-hour access to our service desk should you want to log a fault log.Please click on the Request a call back option below for assistance"
+        
+      ]
+    },
+    {
+      "tag":"cloud services",
+      "patterns":[
+        "Does Telkom offer IT and cloud services?",
+        ""
+      ],
+      "responses":[
+        "Yes, we offer a range of advanced IT services customised to your business's needs",
+        ""
+      ]
+    },
+    {
+      "tag":" backed up to your servers",
+      "patterns":[
+        "Does PC Backup perform off-site backups once the data is backed up to your servers?",
+        ""
+      ],
+      "responses":[
+        "All data is replicated to redundant servers on a continuous basis to ensure complete redundancy and peace of mind that your data is secure",
+        ""
+      ]
+    },
+    {
+      "tag":" once it is saved",
+      "patterns":[
+        "Does PC Backup offer any guarantees regarding my data once it is saved?",
+        ""
+      ],
+      "responses":[
+        "We offer a full SLA with a guarantee of 99.5% uptime",
+        ""
+      ]
+    },
+    {
+      "tag":"Backup client",
+      "patterns":[
+        "Do I need a license for each PC Backup client?",
+        ""
+      ],
+      "responses":[
+        "Yes, you will need a license on every PC that requires backup.",
+        ""
+      ]
+    },
+    {
+      "tag":"PC Backup",
+      "patterns":[
+        "Why should I use PC Backup?",
+        ""
+      ],
+      "responses":[
+        "PC Backup is easy to use, simple to integrate and allows for a SME to backup desktops simply and effortlessly",
+        ""
+      ]
+    }
+  ]
+}
